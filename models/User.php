@@ -109,6 +109,10 @@ class User {
             $this->lastName = $user->lastName;
             $this->firstName = $user->firstName;
             $this->birthDate = $user->birthDate;
+            $this->address = $user->address;
+            $this->zipCode = $user->zipCode;
+            $this->phoneNumber = $user->phoneNumber;
+            $this->idService = $user->idService;
             return TRUE;
         }
         return FALSE;

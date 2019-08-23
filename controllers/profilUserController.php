@@ -1,14 +1,10 @@
 <?php
-include_once 'models/User.php';
-$User = new User();
-$userId = $User->getId();
-$userLastName = $User->getLastName();
-$userFirstName = $User->getFirstName();
-$userBirthDate = $User->getBirthDate();
-$userAddress = $User->getAddress();
-$userZipCode = $User->getZipCode();
-$userService = $User->getIdService();
-$pageTitle = $userFirstName . ' ' . $userLastName;
-var_dump($User->getLastName());
+session_start();
+
+require_once 'models/User.php';
+$user = new User();
+$user->setId($_GET['id']);
+$user->getUserById();
+$pageTitle = $user->getFirstName() . ' ' . $user->getLastName();
 require_once 'views/profilUser.php';
 ?>
