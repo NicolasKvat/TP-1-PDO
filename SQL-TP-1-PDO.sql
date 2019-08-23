@@ -24,7 +24,7 @@ CREATE TABLE users(
         lastName    Varchar (50) NOT NULL ,
         firstName   Varchar (50) NOT NULL ,
         birthDate   Date NOT NULL ,
-        adress      Text NOT NULL ,
+        address      Text NOT NULL ,
         zipCode     Varchar (5) NOT NULL ,
         phoneNumber Varchar (10) NOT NULL ,
         idService  Int NOT NULL
