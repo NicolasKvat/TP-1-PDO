@@ -23,3 +23,4 @@ require_once 'header.php';
 <div class='m-4 text-center'>
     <a href="?page=accueil" class="btn btn-outline-danger">Retour</a>
 </div>
+<?php require_once 'footer.php';

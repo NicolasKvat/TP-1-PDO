@@ -1,4 +1,4 @@
-<?php
+<?php //
 session_start();
 require_once 'models/User.php';
 if(isset($_GET['id'])) {

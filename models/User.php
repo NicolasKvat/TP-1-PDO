@@ -79,6 +79,26 @@ class User {
             //execution de la requete
         $query->execute();
     }
+    
+        //methode qui met à jour le patient
+    public function updateUser($id) {
+        //preparation de la requete
+        $query = $this->db->prepare("UPDATE `users` SET lastName = :lastName, firstName = :firstName, birthDate = :birthDate, phoneNumber = :phoneNumber, address = :address, zipCode = :zipCode, idService = :idService WHERE id = :id;");
+        $query->bindValue(':lastName', $_POST['lastName']);
+        $query->bindValue(':firstName', $_POST['firstName']);
+        $query->bindValue(':birthDate', $_POST['birthDate']);
+        $query->bindValue(':phoneNumber', $_POST['phoneNumber']);
+        $query->bindValue(':address', $_POST['address']);
+        $query->bindValue(':zipCode', $_POST['zipCode']);
+        $query->bindValue(':idService', $_POST['service']);
+        $query->bindValue(':id', $id);
+        //execution de la requete
+        $query->execute();
+        if($query->rowCount() > 0) {
+            return true;
+        }
+        return false;
+    }
 
     //fonction supprimer l'utilisateur
     public function deleteUser($id) {
@@ -113,9 +133,9 @@ class User {
             $this->zipCode = $user->zipCode;
             $this->phoneNumber = $user->phoneNumber;
             $this->idService = $user->idService;
-            return TRUE;
+            return true;
         }
-        return FALSE;
+        return false;
     }
 
 }

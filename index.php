@@ -1,10 +1,23 @@
 <?php
 // seul ces pages sont valides
 $routes = [
+    //utilisateurs
     'accueil' => 'views/userList.php',
     'deleteUserConfirm' => 'views/confirmDeleteUser.php',
     'addUserForm' => 'controllers/addUserFormController.php',
-    'profilUser' => 'controllers/profilUserController.php'
+    'profilUser' => 'controllers/profilUserController.php',
+    'updateUser' => 'controllers/updateUserFormController.php',
+    //articles
+    'articles' => 'controllers/articlesListController.php',
+    'addArticleForm' => 'controllers/addArticleFormController.php',
+    'detailArticle' => 'controllers/detailArticleController.php',
+    'deleteArticleConfirm' => 'views/confirmDeleteArticle.php',
+    'updateArticleForm' => 'controllers/updateArticleController.php',
+    //galerie d'images
+    'addFileForm' => 'controllers/addFileFormController.php',
+    'fileGalleryList' => 'controllers/fileGalleryListController.php',
+    'deleteFileConfirm' => 'views/confirmDeleteFile.php',
+    'updateFileForm' => 'controllers/updateFileController.php',
 ];
 
 //si un parametre page est passé dans le GET

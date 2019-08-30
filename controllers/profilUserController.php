@@ -1,7 +1,7 @@
 <?php
-session_start();
-
+require_once 'models/Service.php';
 require_once 'models/User.php';
+$service = new Service();
 $user = new User();
 $user->setId($_GET['id']);
 $user->getUserById();

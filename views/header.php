@@ -9,7 +9,7 @@
         <title><?= $pageTitle ?></title>
     </head>
     <body>
-        <div class="container-fluid">
+        <div class="container-fluid p-0 m-0">
         <header>
             <h1><?= $pageTitle ?></h1>
         </header>
