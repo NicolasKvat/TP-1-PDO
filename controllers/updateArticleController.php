@@ -7,6 +7,7 @@ $Article->getArticleById();
 // pattern pour la vérification du formulaire
 //$emailPattern = '^[A-Za-z0-9](([_\.\-]?[a-zA-Z0-9]+)*)@([A-Za-z0-9]+)(([\.\-]?[a-zA-Z0-9]+)*)\.([A-Za-z]{2,})$/';
 $stringPattern = '/^[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._\s-]{3,60}$/';
+$stringPatternText = '/^[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ._\s-]{3,500}$/';
 //   On test chaque input en fonction de son pattern et si ils ne correspondent pas on insert un message d'erreur
 //   et on réinitialise le POST afin de ne pas la garder dans le champ
 $formError = [];
@@ -25,8 +26,10 @@ if ($_POST['updateArticle']) {
     if (empty($_POST['text'])) {
         $formError['text'] = 'Veuillez entrer un texte.';
         // Si le texte est incorrect
+    } elseif(!preg_match($stringPatternText, $_POST['text'])) {
+        $formError['text'] = 'Veuillez entrer un texte valide.';
     } else {
-        $text = trim(strip_tags($_POST['text']));
+        $text = trim(strip_tags(($_POST['text'])));              
     }
     if (empty($formError)) {
 
